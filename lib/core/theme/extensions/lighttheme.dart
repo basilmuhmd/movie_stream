@@ -11,17 +11,17 @@ final _lightTheme = ThemeData(
   brightness: Brightness.light,
   extensions: [
     AppColorExtension(
-      primary: Colors.yellow,
+      primary: AppColorPalette.black600,
       secondary: AppColorPalette.yellow100,
       text: AppColorPalette.grey900,
-      textInverse: Colors.white,
+      textInverse: const Color.fromARGB(255, 149, 5, 5),
       textSubtle: AppColorPalette.grey700,
       textSubtlest: AppColorPalette.grey500,
-      backgroundDanger: Colors.red,
+      backgroundDanger: AppColorPalette.black500,
     ),
     AppSpaceExtension.fromBaseSpace(8),
     AppTypographyExtension.fromColors(
-      defaultFontColor: AppColorPalette.grey900,
+      defaultFontColor: const Color.fromARGB(255, 162, 132, 132),
       linkColor: Colors.blue,
       dimFontColor: AppColorPalette.grey700,
     )

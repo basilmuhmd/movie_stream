@@ -5,11 +5,11 @@ class LogoutUsecses {
   final AuthRepositery repositery;
   LogoutUsecses({required this.repositery});
 
-  Future<void> call(String email, String password) async {
+  Future<void> call() async {
     try {
       repositery.logOut();
     } on Exception {
-      throw AuthenticationFailException("cannot Signup please try again");
+      throw AuthenticationFailException("cannot logout please try again");
     }
   }
 }

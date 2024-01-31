@@ -54,10 +54,6 @@ class Signup extends HookConsumerWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                LoginConstents.forget,
-                style: AppTheme.of(context).typography.h400,
-              ),
               SizedBox(
                 width: AppTheme.of(context).spaces.space_125,
               ),
@@ -69,7 +65,7 @@ class Signup extends HookConsumerWidget {
                     style: AppTheme.of(context).typography.h400,
                   ),
                   InkWell(
-                      onTap: () => context.push(HomePage.routePath),
+                      onTap: () => context.push(LoginPage.routePath),
                       child: const Text(LoginConstents.buttontxt))
                 ],
               ),
