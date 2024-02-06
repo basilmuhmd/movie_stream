@@ -19,8 +19,10 @@ class Trendingmovies extends ConsumerWidget {
           return ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: InkWell(
-              onTap: () => context.push(OverView.routePath,
-                  extra: ref.watch(movieProvider).value!.getPopular[itemindex]),
+              onTap: () => context.push(
+                OverView.routePath,
+                extra: (ref.watch(movieProvider).value!.getPopular[itemindex]),
+              ),
               child: Container(
                 height: 300,
                 width: 200,

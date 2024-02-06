@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -49,20 +43,41 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyCoTJaMhVQ-DEuUAYQybyWYULjm7umOkx0',
+    appId: '1:239458715044:web:57514196de8633babfed31',
+    messagingSenderId: '239458715044',
+    projectId: 'movieapp2-1531b',
+    authDomain: 'movieapp2-1531b.firebaseapp.com',
+    storageBucket: 'movieapp2-1531b.appspot.com',
+    measurementId: 'G-0L0T3X6YRB',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDV6rmHX5sli_RcnvqpqBQN21unaneef1I',
-    appId: '1:579474951107:android:9034f1f60ab1c46926cb76',
-    messagingSenderId: '579474951107',
-    projectId: 'movie-app-c61fa',
-    storageBucket: 'movie-app-c61fa.appspot.com',
+    apiKey: 'AIzaSyDpteYXAkCCQ8rtC4VgPj-sgir9XZN_bmU',
+    appId: '1:239458715044:android:10a35cbeb5a25e7bbfed31',
+    messagingSenderId: '239458715044',
+    projectId: 'movieapp2-1531b',
+    storageBucket: 'movieapp2-1531b.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAQ7gNNwSqdExnkO3WNdlAxKGHgu0nsYT0',
-    appId: '1:579474951107:ios:a0182b5e11b128d926cb76',
-    messagingSenderId: '579474951107',
-    projectId: 'movie-app-c61fa',
-    storageBucket: 'movie-app-c61fa.appspot.com',
+    apiKey: 'AIzaSyAxrxc6rfeKlrl0yrEGQ7QSCWbOPfpbeYE',
+    appId: '1:239458715044:ios:819aece5cbf824e0bfed31',
+    messagingSenderId: '239458715044',
+    projectId: 'movieapp2-1531b',
+    storageBucket: 'movieapp2-1531b.appspot.com',
+    iosClientId: '239458715044-glv8sd65642vbciejn5sv0o5q0glprdi.apps.googleusercontent.com',
     iosBundleId: 'com.example.movieappCleanarchitrcture',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyAxrxc6rfeKlrl0yrEGQ7QSCWbOPfpbeYE',
+    appId: '1:239458715044:ios:e232c895c3a7120bbfed31',
+    messagingSenderId: '239458715044',
+    projectId: 'movieapp2-1531b',
+    storageBucket: 'movieapp2-1531b.appspot.com',
+    iosClientId: '239458715044-6ud64b10ptqh9damh3sirt013bbbbnco.apps.googleusercontent.com',
+    iosBundleId: 'com.example.movieappCleanarchitrcture.RunnerTests',
   );
 }

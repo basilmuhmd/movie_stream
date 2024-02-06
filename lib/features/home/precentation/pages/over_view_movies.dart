@@ -3,14 +3,19 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:movieapp_cleanarchitrcture/core/constents/api_constents/api_constants.dart';
 import 'package:movieapp_cleanarchitrcture/core/theme/extensions/apptheme.dart';
+import 'package:movieapp_cleanarchitrcture/features/home/domain/enitity/comment_entity.dart';
 import 'package:movieapp_cleanarchitrcture/features/home/domain/enitity/movie_entity.dart';
+import 'package:movieapp_cleanarchitrcture/features/home/precentation/pages/favorite_page.dart';
 import 'package:movieapp_cleanarchitrcture/features/home/precentation/widgets/top_part_overview.dart';
 
 class OverView extends ConsumerWidget {
   static const routePath = "/overview";
   final MovieEntity entity;
 
-  const OverView({super.key, required this.entity});
+  const OverView({
+    super.key,
+    required this.entity,
+  });
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final color = AppTheme.of(context).colors;
@@ -38,7 +43,7 @@ class OverView extends ConsumerWidget {
                 color: color.secondary,
               ),
             ),
-            Text("Details"),
+            const Text("Details"),
             Container(
               width: AppTheme.of(context).spaces.space_600,
               height: AppTheme.of(context).spaces.space_600,
@@ -46,9 +51,12 @@ class OverView extends ConsumerWidget {
                 borderRadius: BorderRadius.circular(10),
                 color: AppTheme.of(context).colors.textSubtle,
               ),
-              child: Icon(
-                Icons.share,
-                color: color.secondary,
+              child: InkWell(
+                onTap: () => context.push(FavoritePage.routePath),
+                child: Icon(
+                  Icons.share,
+                  color: color.secondary,
+                ),
               ),
             ),
           ],
@@ -62,6 +70,7 @@ class OverView extends ConsumerWidget {
               title: entity.originalTitle,
               description: entity.overview,
               rating: entity.voteAverage.toString(),
+              entity: entity,
             )
           ],
         ),

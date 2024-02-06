@@ -29,6 +29,7 @@ class MovieRepositeryImpl implements MovieRepositery {
             title: result.title,
             video: result.video,
             voteAverage: result.voteAverage,
+            id: result.id,
           )
       ];
     }
@@ -54,6 +55,7 @@ class MovieRepositeryImpl implements MovieRepositery {
             title: result.title,
             video: result.video,
             voteAverage: result.voteAverage,
+            id: result.id,
           )
       ];
     }
@@ -79,6 +81,7 @@ class MovieRepositeryImpl implements MovieRepositery {
             title: result.title,
             video: result.video,
             voteAverage: result.voteAverage,
+            id: result.id,
           )
       ];
     }
@@ -104,6 +107,7 @@ class MovieRepositeryImpl implements MovieRepositery {
             title: result.title,
             video: result.video,
             voteAverage: result.voteAverage,
+            id: result.id,
           )
       ];
     }
